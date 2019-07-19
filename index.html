@@ -1,0 +1,42 @@
+
+depcode <input type="text" [(ngModel)]="filterdepcode" >
+arrcode <input type="text" [(ngModel)]="filterarrcode" >
+<input type="button" value="Search" (click)="fetchBycode(filterdepcode,filterarrcode)">
+<br>
+<b>{{"Total Count ="+count}}</b>
+<hr/>
+
+<table border="1">
+<thead>
+    <tr>
+        <th>flightid</th>
+        <th>depcode</th>
+        <th>arrcode</th>
+        <th>depdate</th>
+        <th>arrdate</th>
+        <th>deptime</th>
+        <th>arrtime</th>
+        <th>flightno</th>
+        <th>journey</th>
+        <th>class</th>
+
+    </tr>
+</thead>
+<tbody>
+<tr *ngFor="let d of dataforfilter">
+<td>{{d.flightid}}</td>
+<td>{{d.depcode}}</td>
+<td>{{d.arrcode}}</td>
+<td>{{d.depdate}}</td>
+<td>{{d.arrdate}}</td>
+<td>{{d.deptime}}</td>
+<td>{{d.arrtime}}</td>
+<td>{{d.flightno}}</td>
+<td>{{d.journey}}</td>
+<td>{{d.class}}</td>
+</tr>
+</tbody>
+</table>
+<input type="button" (click)="call()">
+<!-- {{newData|json}}
+{{data|count}} -->
